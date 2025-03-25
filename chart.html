@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tokyo Population Trends</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom"></script>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background-color: #1e1e1e; color: white; }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto;
+            gap: 1em;
+            padding: 20px;
+        }
+        .box {
+            padding: 20px;
+            background-color: #313539;
+            border-radius: 20px;
+            text-align: center;
+        }
+        canvas { width: 100%; height: 100%; }
+    </style>
+</head>
+<body>
+    <h1>Tokyo Population Trends</h1>
+    <div class="grid-container">
+        <div class="box">Since it became a megacity in the 1950s, Tokyo has been on a massive population incline. The Meiji Restoration's modernization efforts, industrialization, and its role as Japan's capital contributed to this growth. However, due to low fertility rates, by 2030, the population is predicted to decrease to 26 million.</div>
+        <div class="box"><canvas id="lineChart"></canvas></div>
+        <div class="box">That is a 231.86% increase.</div>
+        <div class="box"><img style="width: 100%; border-radius: 20px;" src="assets/images/Tokyo%20largest%20city.jpg" alt="Largest city"></div>
+        <div class="box"><canvas id="barChart"></canvas></div>
+        <div class="box"><canvas id="pieChart"></canvas></div>
+    </div>
+
+    <script>
+        const data = {
+            years: [1950, 1955, 1960, 1965, 1970, 1975, 1980, 1985, 1990, 1995, 2000, 2005, 2010, 2015, 2020, 2025, 2030],
+            population: [11.27, 13.20, 16.70, 19.20, 23.30, 26.61, 28.88, 30.27, 31.80, 32.58, 33.41, 34.47, 35.68, 36.14, 37.00, 37.04, 26.00]
+        };
+
+        new Chart(document.getElementById('lineChart').getContext('2d'), {
+            type: 'line',
+            data: {
+                labels: data.years,
+                datasets: [{
+                    label: 'Tokyo Population (millions)',
+                    data: data.population,
+                    borderColor: 'red',
+                    backgroundColor: 'rgba(0, 0, 255, 0.1)',
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { 
+                    zoom: { 
+                        pan: { enabled: false }, // Disabled panning
+                        zoom: { wheel: { enabled: false } } // Disabled zooming
+                    } 
+                }
+            }
+        });
+
+        new Chart(document.getElementById('barChart').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: data.years.slice(1),
+                datasets: [{
+                    label: 'Percentage Change (%)',
+                    data: data.population.map((p, i, arr) => i === 0 ? 0 : ((p - arr[i - 1]) / arr[i - 1] * 100).toFixed(2)),
+                    backgroundColor: 'green'
+                }]
+            },
+            options: { responsive: true }
+        });
+
+        new Chart(document.getElementById('pieChart').getContext('2d'), {
+            type: 'pie',
+            data: {
+                labels: ['2018 Peak (37.5M)', '2030 Projection (26M)'],
+                datasets: [{
+                    data: [37.5, 26],
+                    backgroundColor: ['blue', 'orange']
+                }]
+            },
+            options: { responsive: true }
+        });
+    </script>
+</body>
+</html>
