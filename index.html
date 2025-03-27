@@ -6,37 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom"></script>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Potta+One&family=Tilt+Prism&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/main.css">
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Honk&display=swap" rel="stylesheet">
     <title>Tokyo</title>
 </head>
 
 <body>
-    <!-- Fixed Navigation Bar -->
-    <nav class="navbar navbar-dark bg-dark fixed-top">
-        <div class="container-fluid">
-            <!-- Logo -->
-            <a class="navbar-brand" href="#">Logo</a>
-
-            <!-- Navigation Links -->
-            <div class="d-flex align-items-center">
-                <a class="nav-link text-light me-3" href="#">Link</a>
-                <a class="nav-link text-secondary me-3" href="#">Link</a>
-                <a class="nav-link text-secondary me-3" href="#">Link</a>
-            </div>
-
-            <!-- Search Bar -->
-            <input placeholder="Type Here" type="text">
-        </div>
-        </div>
-    </nav>
-
     <!-- Title of page-->
     <div class="container-fade">
         <div class="fade-item">
@@ -44,18 +23,39 @@
         </div>
         <div class="image-container">
             <img style="position: absolute; top: 10px;" src="assets/images/Tokyo%20city.webp" alt="Main Image"
-                 class="foreground">
+                class="foreground">
         </div>
+<div style="position: absolute; top: 400px;" class="boxinfo fade-item"><b>Capital and Largest City:</b>
+    Tokyo serves as the capital and largest city of Japan. Situated on the island of Honshu, in the Kanto region, on the southeastern side of the main island. </div>
 
-   
+    <div style="position: absolute; top: 600px; right: 100px;" class="boxinfo fade-item"><b>Population</b>
+        The city proper has a population of over 14 million, making it one of the most populous urban areas in the world.  </div>
+
+        <div style="position: absolute; top: 800px;" class="boxinfo fade-item"><b>Historical Name:</b>
+            Tokyo was formerly known as Edo, the name of the small fishing village that existed on the site for centuries.  </div>
+            
+
+        <div style="position: absolute; top: 1000px; right: 100px;" class="boxinfo fade-item"><b>
+            Capital Shift:
+        </b>
+        The capital of Japan was moved to Edo (renamed Tokyo) after the Meiji Restoration in 1868.  </div>
+
+            <div style="position: absolute; top: 1200px;" class="boxinfo fade-item"><b>Tax-Free Shopping:</b>
+                Tokyo is a great place for tax-free shopping, particularly for tourists.  </div>
+
+               <div style="position: absolute; top: 1400px; right: 100px;" class="boxinfo fade-item"><b>Tokyo's Oldest Temple:</b>
+                Tokyo's oldest temple is possibly Sensō-ji in Asakusa, founded in 628.  </div>
+
         <!-- Slide show -->
         <div class="container fade-item">
             <div id="slide">
-                <div class="item" style="background-image: url(assets/images/Cool.jpeg);">
+                <div class="item" style="background-image: url(assets/images/Native-people.jpg);">
                     <div class="content">
                         <div class="box2"></div>
-                        <div class="name">LUNDEV</div>
-                        <div class="des">Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu</div>
+                        <div class="name">The Ainu</div>
+                        <div class="des">The Ainu are believed to be descendants of an indigenous population that once
+                            spread across northern Asia, and they are considered to be the earliest settlers of
+                            Hokkaido, Japan's northern island. </div>
                         <button>See more</button>
                     </div>
                 </div>
@@ -111,8 +111,8 @@
                 </div>
             </div>
             <div class="buttons">
-                <button id="prev"><i class="fa-solid fa-angle-left"></i></button>
-                <button id="next"><i class="fa-solid fa-angle-right"></i></button>
+                <button id="prev"><i class="fa-solid fa-angle-left"></i><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#blad"><path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z"/></svg></button>
+                <button id="next"><i class="fa-solid fa-angle-right"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#bla"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg></button>
                 <script>
                     document.getElementById('next').onclick = function () {
                         let lists = document.querySelectorAll('.item');
@@ -129,7 +129,7 @@
 
     <!--Image and title for Push and Pull factors-->
     <div> <img src="assets/images/Tokyo%20City%20wide.jpg" alt="Tokyo City Wide"
-               style="position: absolute; top: 2850px; right: 32px; width: 1200px; height: 450px;">
+            style="position: absolute; top: 2850px; right: 32px; width: 1200px; height: 450px;">
         <h1
             style="position: absolute; top: 3000px; right: 200px; font-weight: 700; font-size: 80px; font-family:Arial, Helvetica, sans-serif">
             Push and Pull Factors</h1>
@@ -142,13 +142,15 @@
     <!--Parallax Scrolling for Push and Pull Factors-->
     <div class="clutter-container">
         <img src="assets/images/Shibuya%20traffic.jpg" class="image-parallax" id="image1" style="top: 20%; right: 60%;">
-        <img src="assets/images/Tokyo%20Rush%20hour.jpg" class="image-parallax" id="image2" style="top: 30%; left: 35%;">
+        <img src="assets/images/Tokyo%20Rush%20hour.jpg" class="image-parallax" id="image2"
+            style="top: 30%; left: 35%;">
         <img src="assets/images/Tokyo%20pollution.jpeg" class="image-parallax" id="image3" style="top: 30%; left: 33%;">
         <img src="assets/images/Tokyo%20water.jpeg" class="image-parallax" id="image4" style="top: 30%; left: 50%;">
         <img src="assets/images/temple.jpg" class="image-parallax" id="image5" style="top: 30%; left: 20%;">
         <img src="assets/images/Media%20Tokyo.jpeg" class="image-parallax" id="image6" style="top: 30%; left: 20%;">
         <img src="assets/images/Tokyo%20education.jpg" class="image-parallax" id="image7" style="top: 10%; left: 60%;">
-        <img src="assets/images/Tokyo%20healthcare.jpeg" class="image-parallax" id="image8" style="top: 30%; left: 70%;">
+        <img src="assets/images/Tokyo%20healthcare.jpeg" class="image-parallax" id="image8"
+            style="top: 30%; left: 70%;">
         <img src="assets/images/Tokyo%20robots.jpeg" class="image-parallax" id="image9" style="top: 70%; left: 50%;">
         <img src="assets/images/Tokyo%20olympics.jpeg" class="image-parallax" id="image10" style="top: 30%; left: 20%;">
     </div>
@@ -207,7 +209,7 @@
         });
     </script>
 
-    <div id="cards" style="position: absolute; top: 3400px; right: 200px;">
+    <div class="fade-item" id="cards" style="position: absolute; top: 3400px; right: 200px;">
         <script src="assets/js/card-hover.js"> </script>
         <div class="card">
             <div class="card-content">
@@ -310,38 +312,44 @@
 
         <div class="grid-container fade-item">
             <div class="box" style="grid-area: box-1;">
-                Since int became a megacity in the 1950s, Tokyo has been on a massive population incline, making it the
+                Since it became a megacity in the 1950s, Tokyo has been on a massive population incline, making it the
                 largest mega city in the world. The population increase was due to the Meiji Restoration's modernization
                 efforts, the huge industrialization, and the city being the new capital and political, economic, and
-                cultural center of Japan. This is because of Japan's low fertility and birth rates, and by 2030 the
-                population is predicted to go down to 26 million.
+                cultural center of Japan.
 
             </div>
-            <div class="box" style="grid-area: box-2;"></div>
-            <div class="box" style="grid-area: box-3;">That is a 231.86% increase</div>
+            <div class="box" style="grid-area: box-2;"><img
+                    style="width: 150px; height: 150px; position: absolute; top: 0px; left: 492px; border-radius: 20px;"
+                    src="assets/images/mriju.jpeg" alt="Largest city"></div>
+            <div class="box" style="grid-area: box-3;"><img
+                style="width: 320px; height: 150px; position: absolute; top: 0px; left: 160px; border-radius: 20px;"
+                src="assets/images/fortnite.jpeg" alt="Largest city"></div>
             <div class="box" style="grid-area: box-4; z-index: 4;">largest mega city in the world <img
                     style="width: 480px; height: 150px; position: absolute; top: 328px; left: 163px; border-radius: 20px;"
                     src="assets/images/Tokyo%20largest%20city.jpg" alt="Largest city"></div>
             <div class="box" style="grid-area: box-5;">
                 <h1 style="font-size: 67px; font-weight: 900;">Tokyo Population</h1>
             </div>
-            <div class="box" style="grid-area: box-6;"></div>
-            <div class="box" style="grid-area: box-7;"></div>
-            <div class="box" style="grid-area: box-8;"></div>
+            <div class="box" style="grid-area: box-6;"><img
+                    style="width: 150px; height: 150px; position: absolute; top: 328px; left: 656px; border-radius: 20px;"
+                    src="assets/images/japan-airlines.jpg" alt="Largest city"></div>
+
+            <div class="box" style="grid-area: box-7;"><img
+                    style="width: 320px; height: 150px; position: absolute; top: 0px; left: 654px; border-radius: 20px;"
+                    src="assets/images/wnao.jpg" alt="Largest city"></div>
+                    
+            <div class="box" style="grid-area: box-8;">
+                <p style="font-size: 18px; font-weight: 600;">This is because of Japan's low fertility and birth rates,
+                    and by 2030 the population is predicted to go down to 26 million.</p>
+            </div>
         </div>
 
-        <h1 style="position: absolute; top:1770px;">Tokyo Population Trends</h1>
-        <div class="grid-container-graph" style="position: absolute; top: 1800px;">
-            <div class="box-graph">Since it became a megacity in the 1950s, Tokyo has been on a massive population
-                incline. The Meiji Restoration's modernization efforts, industrialization, and its role as Japan's
-                capital contributed to this growth. However, due to low fertility rates, by 2030, the population is
-                predicted to decrease to 26 million.</div>
-            <div class="box-graph"><canvas id="lineChart"></canvas></div>
-            <div class="box-graph">That is a 231.86% increase.</div>
-            <div class="box-graph"><img style="width: 100%; border-radius: 20px;" src="assets/images/Tokyo%20largest%20city.jpg"
-                    alt="Largest city"></div>
-            <div class="box-graph"><canvas id="barChart"></canvas></div>
-            <div class="box-graph"><canvas id="pieChart"></canvas></div>
+        <h1 class="fade-item" style="position: absolute; top:1770px;">Tokyo Population Trends</h1>
+        <div class="grid-container-graph fade-item" style="position: absolute; top: 1800px;">
+
+            <div class="box-graph fade-item"><canvas id="lineChart"></canvas></div>
+            <div class="box-graph fade-item"><canvas id="barChart"></canvas></div>
+            <div class="box-graph fade-item"><canvas id="pieChart"></canvas></div>
         </div>
 
         <script>
@@ -357,19 +365,13 @@
                     datasets: [{
                         label: 'Tokyo Population (millions)',
                         data: data.population,
-                        borderColor: 'blue',
+                        borderColor: 'red',
                         backgroundColor: 'rgba(0, 0, 255, 0.1)',
                         fill: true
                     }]
                 },
                 options: {
-                    responsive: true,
-                    plugins: {
-                        zoom: {
-                            pan: { enabled: false }, // Disabled panning
-                            zoom: { wheel: { enabled: false } } // Disabled zooming
-                        }
-                    }
+                    responsive: true
                 }
             });
 
@@ -399,10 +401,10 @@
             });
         </script>
 
-
         <!-- Card Auroura -->
-        <div class="rectangle-aurora">
-            <div class="rectangle-aurora2">When it comes to the age ratios, people from 65 and over make up 33% of the
+        <div class="rectangle-aurora fade-item">
+            <div class="rectangle-aurora2 fade-item">
+                <h1>Age population</h1>When it comes to the age ratios, people from 65 and over make up 33% of the
                 population, but in the next upcoming years, this will substantially decline. In turns of working ages
                 (20-64), this will also drop to the 4.8 - 5.6 million range (2020 - 2030), which is less then the 7.7 -
                 8.3 million range (2010 - 2020). This is due to the lack of younger residents, couples no longer having
@@ -411,24 +413,311 @@
                 49.9%. For every 100 women, there is 96 men.
             </div>
         </div>
-        <!-- Spacer to create gap -->
-        <div class="spacer"></div>
-        <script>
-            // Select all elements that should fade in
-            const fadeItems = document.querySelectorAll('.fade-item');
 
-            // Intersection Observer to detect scrolling
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('show');
-                    }
-                });
-            }, { threshold: 0.5 });
+<!-- From Uiverse.io by Spacious74 --> 
+<div class="bgblue fade-item" style="position: absolute; top: 2600px; right: 20px;">
+    <div class="card-satelite fade-item">
+        <h1>Satelite Images</h1>
+        From the images, one clear difference that can be identified between the older and newer image is the water quality and colour, with the older image displaying a deeper blue and being clearer, whilst the newer image is a lighter greenish-blue and is more foggy, especially by the coast.
+        Also, there is a clear expansion of urbanisation, with the once green forest regions now being covered by city buildings and skyscrapers.
+        
+    </div>
+  </div>
+  
 
-            // Observe all fade items
-            fadeItems.forEach(item => observer.observe(item));
-        </script>
+        <body>
+            <div class="wrapper fade-item" style="position: absolute; top: 3200px; right: 200px;">
+                <div class="before">
+                    <img class="content-image" src="assets/images/Before-satelite-tokyo.jpg" draggable="false" />
+                </div>
+                <div class="after">
+                    <img class="content-image" src="assets/images/After-satelite-images.jpg" draggable="false" />
+                </div>
+                <div class="scroller">
+                    <svg class="scroller__thumb" xmlns="http://www.w3.org/2000/svg" width="100" height="100"
+                        viewBox="0 0 100 100">
+                        <polygon points="0 50 37 68 37 32 0 50" style="fill:#fff" />
+                        <polygon points="100 50 64 32 64 68 100 50" style="fill:#fff" />
+                    </svg>
+                </div>
+            </div>
+    </div>
+    <script>
+        // I hope this over-commenting helps. Let's do this!
+        // Let's use the 'active' variable to let us know when we're using it
+        let active = false;
+
+        // First we'll have to set up our event listeners
+        // We want to watch for clicks on our scroller
+        document.querySelector('.scroller').addEventListener('mousedown', function () {
+            active = true;
+            // Add our scrolling class so the scroller has full opacity while active
+            document.querySelector('.scroller').classList.add('scrolling');
+        });
+        // We also want to watch the body for changes to the state,
+        // like moving around and releasing the click
+        // so let's set up our event listeners
+        document.body.addEventListener('mouseup', function () {
+            active = false;
+            document.querySelector('.scroller').classList.remove('scrolling');
+        });
+        document.body.addEventListener('mouseleave', function () {
+            active = false;
+            document.querySelector('.scroller').classList.remove('scrolling');
+        });
+
+        // Let's figure out where their mouse is at
+        document.body.addEventListener('mousemove', function (e) {
+            if (!active) return;
+            // Their mouse is here...
+            let x = e.pageX;
+            // but we want it relative to our wrapper
+            x -= document.querySelector('.wrapper').getBoundingClientRect().left;
+            // Okay let's change our state
+            scrollIt(x);
+        });
+
+        // Let's use this function1
+        function scrollIt(x) {
+            let transform = Math.max(0, (Math.min(x, document.querySelector('.wrapper').offsetWidth)));
+            document.querySelector('.after').style.width = transform + "px";
+            document.querySelector('.scroller').style.left = transform - 25 + "px";
+        }
+
+        // Let's set our opening state based off the width, 
+        // we want to show a bit of both images so the user can see what's going on
+        scrollIt(150);
+
+        // And finally let's repeat the process for touch events
+        // first our middle scroller...
+        document.querySelector('.scroller').addEventListener('touchstart', function () {
+            active = true;
+            document.querySelector('.scroller').classList.add('scrolling');
+        });
+        document.body.addEventListener('touchend', function () {
+            active = false;
+            document.querySelector('.scroller').classList.remove('scrolling');
+        });
+        document.body.addEventListener('touchcancel', function () {
+            active = false;
+            document.querySelector('.scroller').classList.remove('scrolling');
+        });
+    </script>
+
+    <div class="card-sway fade-item" style="position: absolute; top: 7100px; right: 200px;">
+        <img src="assets/images/lively-tokyo.webp" alt="lively">
+        <div class="card__content-sway">
+            <p class="card__title-sway">Social - Positives
+            </p>
+            <p class="card__description-sway">Social:
+                It improves access to services, healthcare, and tourism, contributing to a vibrant urban life. Tourism
+                thrives in areas that are very urban like tokyo, which gives economic resources to the city and
+                government, and giving many tourism sites rich in culture for the citizens
+            </p>
+        </div>
+    </div>
+
+    <h1 style="font-size: 50px; position: absolute; top: 7000px; left: 40px;">
+        Impact on population
+    </h1>
+    <br>
+    <br>
+
+    <div class="card-zoom fade-item" style="position: absolute; top: 7200px;">Economic - Positives</div>
+
+    <!-- From Uiverse.io by gharsh11032000 -->
+    <div class="card-tilt fade-item" style="position: absolute; top: 7400px; left: 300px;">
+        <div class="main-content-tilt">
+            <div class="header-tilt">
+            </div>
+            <p class="heading">Negatives</p>
+            <div class="categories">
+                <span>Congestion</span>
+                <span>Pollution</span>
+            </div>
+        </div>
+        <br>
+        <div class="footer-tilt fade-item">
+            “Heat Island” Effect:
+            The dense urban congestion and environment and human activities generate waste heat, which makes the island
+            heat up and make it harder to cool down, increasing the temperature, and possible health problems.
+            <br>
+            <br>
+            Air Pollution:
+            Industrialization and increased traffic contribute to air pollution, impacting residents' health and the
+            environment. This pollution consists of nitrofgen oxides and other harmful pollutants, which pose serious
+            health risks, like asthma and other respiratory or cardiovascular diseases and issues.
+
+        </div>
+    </div>
+
+    <!-- From Uiverse.io by kamehame-ha -->
+    <div class="cards-blur fade-item" style="position: absolute; top: 7500px; right: 280px;">
+        <div class="card-blur red">
+            <p class="tip" style="font-size: 40px;">Negatives</p>
+
+        </div>
+        <div class="card-blur blue">
+            <p class="tip">Carbon Emissions: </p>
+            <p class="second-text">Increased energy consumption and transportation contribute to higher carbon
+                emissions, exacerbating climate change.
+
+            </p>
+        </div>
+        <div class="card-blur green">
+            <p class="tip">Traffic Congestion: </p>
+            <p class="second-text"> Increased traffic due to a larger population can lead to chronic congestion and
+                commute problems.</p>
+        </div>
+    </div>
+
+
+    <!-- From Uiverse.io by gharsh11032000 -->
+    <div style="position: absolute; top: 7100px; left: 300px;" class="card-flip fade-item">
+        <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#e3e3e3">
+            <path
+                d="M768-120 517-371l57-57 251 251-57 57Zm-581 0-57-57 290-290-107-107-23 23-44-44v85l-24 24-122-122 24-24h86l-48-48 131-131q17-17 37-23t44-6q24 0 44 8.5t37 25.5L348-699l48 48-24 24 104 104 122-122q-8-13-12.5-30t-4.5-36q0-53 38.5-91.5T711-841q15 0 25.5 3t17.5 8l-85 85 75 75 85-85q5 8 8.5 19.5T841-709q0 53-38.5 91.5T711-579q-18 0-31-2.5t-24-7.5L187-120Z" />
+        </svg>
+        <div class="card-flip__content">
+            <p class="card-flip__title">Resource strains:</p>
+            <p class="card-flip__description">
+                Due to ithe ncreasing population, there is a much higher demand in resources, including food, water and
+                essentials like clothes or homes. This leads to fewer resources for the population, leading to poverty
+                and more problems.
+            </p>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <div style="position: absolute; top: 8000px; width: 200px; height: 200px; background-color: aqua;"></div>
+    </div>
+
+    <!-- From Uiverse.io by 0xnihilism -->
+    <h1 style="position: absolute; top: 7950px; right: 550px;">Ways to</h1>
+    <div style="position: absolute; top: 8000px; left: 100px;" class="input-container fade-item">
+        <input class="input" name="text" type="text" placeholder="IMPROVE SUSTAINABILITY IN TOKYO" />
+    </div>
+
+    <!-- From Uiverse.io by dylanharriscameron -->
+    <div style="position: absolute; top: 8200px; right: 350px;" class="card-light fade-item">
+        <div style="color: black; padding: 20px;" class="bg">
+            <h1>HOW TO IMPROVE SUSTAINABILITY IN TOKYO</h1>
+            <br>
+            <p style="font-size:16px">
+                <b>Reducing CO2 Emmissions and Being Energy Efficient:
+                    There are several ways Tokyo’s sustainability can be improved, which include:</b>
+                <br>
+                <br>
+                <b>Promoting renewable energy -</b> Promoting renewable energy can help persuade people from switching
+                to switch from coal and fossil fuel to energy sources such as solar, wind or biomass.
+                <br>
+                <b>Reducing emissions -</b> Tokyo can reduce emissions through techniques like using zero-emission
+                vehicles (electric), using renewable energy sources and implementing energy management strategies.
+                <br>
+                <b>Improving public transport -</b> Using vehicles that do not rely on petrol or fossil fuels but rather
+                using either human-powered vehicles (scooters, bikes…) or electric vehicles (buses, trains…).
+                <br>
+                <b>Engaging the community to eco-friendly practices -</b> Implementing practices like recycling, reusing
+                materials, using eco-friendly packing or bags for shopping and promoting the reduction of food waste
+                through composting are multiple ways that can be used to engage the community in eco-friendly practices
+                and help improve sustainability.
+            </p>
+        </div>
+        <div class="blob"></div>
+
+    </div>
+
+<!-- Footer -->
+ <br>
+ <br>
+ <hr style="background-color: white; position: absolute; top: 9000px; z-index: 1;">
+<footer style="position: absolute; top: 9000px; background-color: black; width: 1300px; height: 1000px;"> <p class="potta-one-regular" style="font-size: 200px; font-weight: 900;">Tokyo</p>
+    <p class="tilt-prisim-regular" style="font-size: 50px; font-weight: 900;">Tokyo old meets new</p>
+<!-- From Uiverse.io by vinodjangid07 --> 
+<div style="position: absolute; top: 800px; left: 20px;" class="card-logo">
+    <a href="#" class="socialContainer containerOne">
+      <svg class="socialSvg instagramSvg" viewBox="0 0 16 16"> <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path> </svg>
+    </a>
+    
+    <a href="#" class="socialContainer containerTwo">
+      <svg class="socialSvg twitterSvg" viewBox="0 0 16 16"> <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"></path> </svg>              </a>
+      
+    <a href="#" class="socialContainer containerThree">
+      <svg class="socialSvg linkdinSvg" viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg>
+    </a>
+    
+    <a href="#" class="socialContainer containerFour">
+      <svg class="socialSvg whatsappSvg" viewBox="0 0 16 16"> <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"></path> </svg>
+    </a>
+  </div>             
+  
+  <!-- From Uiverse.io by Prakhar227 --> 
+<div class="form-container">
+    <div class="form">
+      <span class="heading">Get in touch</span>
+      <span class="c1">Join blog and recieve discounts!</span>
+  
+      <input class="input-login" type="text" placeholder="Phone Number" />
+      <span class="c2">Join our program and get exclusive perks!</span>
+      <div class="button-container">
+        <div class="send-button">Become a member</div>
+        <div class="reset-button-container">
+          <div class="reset-button" id="reset-btn">Logout</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div>
+    <h1 style="position: absolute; top: 950px; text-align: center;">BIBLIOGRAPHY</h1>
+    <p style="position: absolute; top:1000px; right: 200px;">
+        Latitude. to (2025) GPS coordinates of Tokyo, Japan. latitude: 35.6895 longitude: 139.6917, Latitude .to, maps, geolocated articles, latitude longitude coordinate conversion. Available at: https://latitude.to/map/jp/japan/cities/tokyo?.com#google_vignette (Accessed: 14 March 2025). 
+        IndexMundi (2021) Japan Demographics Profile, Japan demographics profile. Available at: https://www.indexmundi.com/japan/demographics_profile.html?.com (Accessed: 14 March 2025). 
+        Frommers (2025) Religion in Tokyo. Available at: https://www.frommers.com/destinations/tokyo/in-depth/religion/ (Accessed: 14 March 2025). 
+        UNHCR (2023) World Directory of Minorities and Indigenous Peoples - Japan, UNHCR Web Archive. Available at: https://webarchive.archive.unhcr.org/20230518100642/https://www.refworld.org/docid/4954ce5c23.html (Accessed: 14 March 2025). 
+        Smith, M. (2024) Tokyo’s Urban Development, successes & challenges, Panmore Institute. Available at: https://panmore.com/tokyo-urban-development-successes-challenges (Accessed: 19 March 2025). 
+        Bouzuhair, A. (2021) Natural Disasters, ArcGIS StoryMaps. Available at: https://storymaps.arcgis.com/stories/ed224f00ef3048b1b74d0ee9e3b6765e (Accessed: 19 March 2025).
+        MAFF (2023) Summary of the Annual Report on Food, Agriculture and Rural Areas in Japan, AnnualReportonFoodAgricultureandRuralAreas_FY2023.pdf. Available at: https://www.maff.go.jp/e/data/publish/Annual_Report/AnnualReportonFoodAgricultureandRuralAreas_FY2023.pdf (Accessed: 19 March 2025). 
+        Gupta, P. and Khare, P. (2024) Do university-bound Indian migrants actually stay in Japan?, The Japan Times. Available at: https://www.japantimes.co.jp/commentary/2024/07/10/japan/indian-migrants-students-university-japan (Accessed: 19 March 2025). 
+        Anderson, M. (2018) Chapter 5 Urban Expansion and Public Transport: Implications for Inclusive Development, Urban Expansion and Public Transport: Implications for Inclusive Development. Available at: https://www.ide.go.jp/library/English/Publish/Reports/Brc/pdf/23_05.pdf (Accessed: 19 March 2025). 
+        Sandbox&Co (2025) Tokyo: Economy, Infoplease. Available at: https://www.infoplease.com/encyclopedia/places/asia/japan/tokyo/economy (Accessed: 19 March 2025). 
+        EduBirdie (2022) Tokyo’s urbanization: Factors and effects - free essay example, Edubirdie. Available at: https://hub.edubirdie.com/examples/tokyos-urbanization-factors-and-effects/ (Accessed: 19 March 2025). 
+        Okubo, M. (2024) A new frontier in international education, The Japan Times. Available at: https://www.japantimes.co.jp/2024/05/18/special-supplements/new-frontier-international-education (Accessed: 19 March 2025). 
+        ResearchGate (2025) Figure 5. diversity within cities in the Tokyo Metropolitan Area., Diversity within cities in the Tokyo Metropolitan Area. Available at: https://www.researchgate.net/figure/Diversity-within-cities-in-the-Tokyo-metropolitan-area_fig5_350830611 (Accessed: 19 March 2025). 
+        World Population Review (2025) Tokyo, Tokyo Population 2025. Available at: https://worldpopulationreview.com/cities/japan/tokyo#population (Accessed: 19 March 2025). 
+        Stratfor Worldview. (n.d.). Japan’s future demographic challenge. Available at: https://worldview.stratfor.com/article/japans-future-demographic-challenge [Accessed 19 Mar. 2025].
+        Joshua. (n.d.). Tokyo: World's largest city. Story Factory. Available at: https://www.storyfactory.org.au/story/tokyo-worlds-largest-city-by-joshua/ [Accessed 26 Mar. 2025].
+        Population Education. (n.d.). Examining Tokyo and Lagos: How urbanization looks in megacities. Available at: https://populationeducation.org/examining-tokyo-and-lagos-how-urbanization-looks-in-megacities/ [Accessed 26 Mar. 2025].
+        Science Photo Library. (n.d.). Tokyo satellite image. Available at: https://www.sciencephoto.com/media/182675/view [Accessed 26 Mar. 2025].
+        Science Photo Library. (n.d.). Tokyo satellite image (second source). Available at: https://www.sciencephoto.com/media/1294718/view [Accessed 26 Mar. 2025].
+        Tokyo Tokyo. (n.d.). Sustainability in Tokyo. Available at: https://tokyotokyo.jp/article/sustainability1/ [Accessed 26 Mar. 2025].
+        Jobs in Japan. (n.d.). Eco-living in Japan: Tips and tricks to live sustainably. Available at: https://jobsinjapan.com/living-in-japan-guide/eco-living-in-japan-tips-and-tricks-to-live-sustainably/#:~:text=DIY%20Your%20Own%20Stuff.%20Organic%20existence%20is,ways%20to%20make%20furniture%20from%20scrap%20items [Accessed 26 Mar. 2025].
+        </p>
+  </div>
+  
+  </footer>
+
+    <!-- Spacer to create gap -->
+    <div class="spacer"></div>
+    <script>
+        // Select all elements that should fade in
+        const fadeItems = document.querySelectorAll('.fade-item');
+
+        // Intersection Observer to detect scrolling
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, { threshold: 0.5 });
+
+        // Observe all fade items
+        fadeItems.forEach(item => observer.observe(item));
+    </script>
     </div>
 </body>
+
 </html>
