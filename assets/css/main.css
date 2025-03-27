@@ -8,11 +8,6 @@
      text-align: center;
  }
 
- /* Add margin below the navigation bar */
- .content-container {
-     margin-top: 80px;
- }
-
  /* Set the font size and style for the title */
  .anton-regular {
      font-family: "Anton", sans-serif;
@@ -71,27 +66,18 @@
 
  /* Box info */
  .boxinfo {
+    color: #000000;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 600;
      position: absolute;
      top: 500px;
      right: 50%;
      width: 500px;
      height: 200px;
-     opacity: 0.5;
+     opacity: 0.8;
      background-color: #f0f0f0;
-     z-index: 2;
-     animation: box1 1s ease 0s 3 alternate;
  }
-
- @keyframes box1 {
-     0% {
-         translate: 500px;
-     }
-
-     100% {
-         translate: 0px;
-     }
- }
-
  /* Slide Show */
  .container {
      position: absolute;
@@ -251,7 +237,7 @@
 
  /* Bento Boxes */
  .box {
-     padding: 20px;
+     padding: 15px;
      background-color: #313539;
      border-radius: 20px;
      z-index: inherit;
@@ -301,12 +287,11 @@
  .grid-container-graph {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
     gap: 1em;
     padding: 20px;
 }
 .box-graph {
-    padding: 20px;
+   
     background-color: #313539;
     border-radius: 20px;
     text-align: center;
@@ -468,7 +453,7 @@ canvas { width: 100%; height: 100%; }
     width: 390px;
     height: 354px;
     position: absolute;
-    top: 2400px;
+    top: 2200px;
     right: 300px;
     background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
     border-radius: 20px;
@@ -491,3 +476,908 @@ canvas { width: 100%; height: 100%; }
    .rectangle-aurora:hover {
     box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
    }
+
+    
+
+    /* Our normalize css */
+    * {
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    /* Our wrapper */
+    .wrapper {
+        width: 500px;
+        height: 600px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate3d(-50%, -50%, 0);
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    }
+
+    /* Our image information */
+    .before,
+    .after {
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-color: white;
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        overflow: hidden;
+    }
+
+    .content-image {
+        height: 100%;
+    }
+
+    .after {
+        width: 125px;
+    }
+
+    .scroller {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        left: 100px;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 50%;
+        background-color: transparent;
+        opacity: 0.9;
+        pointer-events: auto;
+        cursor: pointer;
+    }
+
+    .scroller:hover {
+        opacity: 1;
+    }
+
+    .scrolling {
+        pointer-events: none;
+        opacity: 1;
+        z-index: 1;
+    }
+
+    .scroller__thumb {
+        width: 100%;
+        height: 100%;
+        padding: 5px;
+    }
+
+    .scroller:before,
+    .scroller:after {
+        content: " ";
+        display: block;
+        width: 7px;
+        height: 9999px;
+        position: absolute;
+        left: 50%;
+        margin-left: -3.5px;
+        z-index: 30;
+        transition: 0.1s;
+    }
+
+    .scroller:before {
+        top: 100%;
+    }
+
+    .scroller:after {
+        bottom: 100%;
+    }
+
+    /* If you want to cahnge the colors, make sure you change the fill in the svgs to match */
+    .scroller {
+        border: 5px solid #fff;
+    }
+
+    .scroller:before,
+    .scroller:after {
+        background: #fff;
+    }
+
+    /* From Uiverse.io by gharsh11032000 */ 
+.card-sway {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100% );
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .card-sway svg {
+    width: 48px;
+    fill: #333;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .card-sway:hover {
+    transform: rotate(-5deg) scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card__content-sway {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    width: 100%;
+    height: 300px;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #fff;
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .card-sway:hover .card__content-sway {
+    transform: translate(-50%, -50%) rotate(0deg);
+    opacity: 1;
+  }
+  
+  .card__title-sway{
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+    font-weight: 700;
+  }
+  
+  .card__description-sway {
+    margin: 10px 0 0;
+    font-size: 14px;
+    color: #777;
+    line-height: 1.4;
+  }
+  
+  .card-sway:hover svg {
+    scale: 0;
+    transform: rotate(-45deg);
+  }
+
+  /* From Uiverse.io by eslam-hany */ 
+.card-zoom {
+    position: relative;
+    width: 220px;
+    height: 320px;
+    background: mediumturquoise;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    font-weight: bold;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+  
+  .card-zoom::before,
+  .card-zoom::after {
+    position: absolute;
+    content: "";
+    width: 20%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    font-weight: bold;
+    background-color: lightblue;
+    transition: all 0.5s;
+  }
+  
+  .card-zoom::before {
+    top: 0;
+    right: 0;
+    border-radius: 0 15px 0 100%;
+  }
+  
+  .card-zoom::after {
+    bottom: 0;
+    left: 0;
+    border-radius: 0 100%  0 15px;
+  }
+  
+  .card-zoom:hover::before,
+  .card-zoom:hover:after {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    transition: all 0.5s;
+  }
+  
+  .card-zoom:hover:after {
+    font-size: 13px;
+    color: black;
+    padding: 15px;
+    content: "Economic: Tokyo's  growth attracts wealth, increases job availability, and improves educational opportunities For example, the large workforce of Tokyo increases productivity and innovation, which attracts many more people. Also more businesses are created and there are more educational opportunities.";
+  }
+  
+  /* From Uiverse.io by gharsh11032000 */ 
+.card-tilt {
+    width: 320px;
+    height: 500px;
+    padding: 20px;
+    color: white;
+    background: linear-gradient(#212121, #212121) padding-box,
+                linear-gradient(145deg, transparent 35%,#e81cff, #40c9ff) border-box;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transform-origin: right bottom;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .card-tilt .main-content {
+    flex: 1;
+  }
+  
+  .card-tilt .header span:first-child {
+    font-weight: 600;
+    color: #717171;
+    margin-right: 4px;
+  }
+  
+  .card-tilt .heading {
+    font-size: 24px;
+    margin: 24px 0 16px;
+    font-weight: 600;
+  }
+  
+  .card-tilt .categories {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .card-tilt .categories span {
+    background-color: #e81cff;
+    padding: 4px 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+    border-radius: 50em;
+  }
+  
+  .card-tilt .footer {
+    font-weight: 600;
+    color: #717171;
+    margin-right: 4px;
+  }
+  
+  .card-tilt:hover {
+    rotate: 8deg;
+  }
+
+  /* From Uiverse.io by gharsh11032000 */ 
+.card-flip {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    perspective: 1000px;
+    box-shadow: 0 0 0 5px #ffffff80;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .card-flip svg {
+    width: 48px;
+    fill: #333;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .card-flip:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+  }
+  
+  .card-flip__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f2f2f2;
+    transform: rotateX(-90deg);
+    transform-origin: bottom;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .card-flip:hover .card-flip__content {
+    transform: rotateX(0deg);
+  }
+  
+  .card-flip__title {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+    font-weight: 700;
+  }
+  
+  .card-flip:hover svg {
+    scale: 0;
+  }
+  
+  .card-flip__description {
+    
+    font-size: 14px;
+    color: #777;
+    
+  }
+  
+  
+ /* From Uiverse.io by kamehame-ha */ 
+.cards-blur {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .cards-blur .red {
+    background-color: #f43f5e;
+  }
+  
+  .cards-blur .blue {
+    background-color: #3b82f6;
+  }
+  
+  .cards-blur .green {
+    background-color: #22c55e;
+  }
+  
+  .cards-blur .card-blur {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    height: 100px;
+    width: 250px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: 400ms;
+  }
+  
+  .cards-blur .card-blur p.tip {
+    font-size: 1em;
+    font-weight: 700;
+  }
+  
+  .cards-blur .card-blur p.second-text {
+    font-size: .7em;
+  }
+  
+  .cards-blur .card-blur:hover {
+    transform: scale(1.1, 1.1);
+  }
+  
+  .cards-blur:hover > .card-blur:not(:hover) {
+    filter: blur(10px);
+    transform: scale(0.9, 0.9);
+  }
+
+  /* From Uiverse.io by 0xnihilism */ 
+.input {
+    width: 100%;
+    max-width: 1100px; /* Increased size */
+    height: 600px; /* Increased height */
+    padding: 12px;
+    font-size: 50px;
+    font-family: "Courier New", monospace;
+    color: #000;
+    background-color: #fff;
+    border: 4px solid #000;
+    border-radius: 0;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 8px 8px 0 #000;
+  }
+  
+  .input::placeholder {
+    font-size: 80px;
+    color: #888;
+  }
+  
+  .input:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0 #000;
+  }
+  
+  .input:focus {
+    background-color: #000;
+    color: #fff;
+    border-color: #ffffff;
+  }
+  
+  .input:focus::placeholder {
+    color: #fff;
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  
+  .input:focus::after {
+    content: "|";
+    position: absolute;
+    right: 10px;
+    animation: blink 0.7s step-end infinite;
+  }
+  
+  .input:valid {
+    animation: typing 2s steps(30, end);
+  }
+  .input-container {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    height: 600px;
+  }
+  
+  .input {
+    width: 100%;
+    height: 100px;
+    padding: 12px;
+    font-size: 18px;
+    font-family: "Courier New", monospace;
+    color: #000;
+    background-color: #fff;
+    border: 4px solid #000;
+    border-radius: 0;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 8px 8px 0 #000;
+  }
+  
+  .input::placeholder {
+    color: #888;
+  }
+  
+  .input:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0 #000;
+  }
+  
+  .input:focus {
+    background-color: #010101;
+    color: #fff;
+    border-color: #d6d9dd;
+  }
+  
+  .input:focus::placeholder {
+    color: #fff;
+  }
+  
+  @keyframes shake {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-5px) rotate(-5deg);
+    }
+    50% {
+      transform: translateX(5px) rotate(5deg);
+    }
+    75% {
+      transform: translateX(-5px) rotate(-5deg);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  .input:focus {
+    animation: shake 0.5s ease-in-out;
+  }
+  
+  @keyframes glitch {
+    0% {
+      transform: none;
+      opacity: 1;
+    }
+    7% {
+      transform: skew(-0.5deg, -0.9deg);
+      opacity: 0.75;
+    }
+    10% {
+      transform: none;
+      opacity: 1;
+    }
+    27% {
+      transform: none;
+      opacity: 1;
+    }
+    30% {
+      transform: skew(0.8deg, -0.1deg);
+      opacity: 0.75;
+    }
+    35% {
+      transform: none;
+      opacity: 1;
+    }
+    52% {
+      transform: none;
+      opacity: 1;
+    }
+    55% {
+      transform: skew(-1deg, 0.2deg);
+      opacity: 0.75;
+    }
+    50% {
+      transform: none;
+      opacity: 1;
+    }
+    72% {
+      transform: none;
+      opacity: 1;
+    }
+    75% {
+      transform: skew(0.4deg, 1deg);
+      opacity: 0.75;
+    }
+    80% {
+      transform: none;
+      opacity: 1;
+    }
+    100% {
+      transform: none;
+      opacity: 1;
+    }
+  }
+  
+  .input:not(:placeholder-shown) {
+    animation: glitch 1s linear infinite;
+  }
+  
+  
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+  
+  .input:focus + .input-container::after {
+    color: #fff;
+  }
+  
+  .input:not(:placeholder-shown) {
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 0px 0px 0 #000;
+  }
+  
+  /* From Uiverse.io by dylanharriscameron */ 
+.card-light {
+    position: relative;
+    width: 600px;
+    height: 650px;
+    border-radius: 14px;
+    z-index: 1111;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+    ;
+  }
+  
+  .bg {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 600px;
+    height: 650px;
+    z-index: 2;
+    background: rgba(255, 255, 255, .95);
+    backdrop-filter: blur(24px);
+    border-radius: 10px;
+    overflow: hidden;
+    outline: 2px solid white;
+  }
+  
+  .blob {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 650px;
+    border-radius: 50%;
+    background-color: #ff0000;
+    opacity: 1;
+    filter: blur(12px);
+    animation: blob-bounce 5s infinite ease;
+  }
+  
+  @keyframes blob-bounce {
+    0% {
+      transform: translate(-100%, -100%) translate3d(0, 0, 0);
+    }
+  
+    25% {
+      transform: translate(-100%, -100%) translate3d(100%, 0, 0);
+    }
+  
+    50% {
+      transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
+    }
+  
+    75% {
+      transform: translate(-100%, -100%) translate3d(0, 100%, 0);
+    }
+  
+    100% {
+      transform: translate(-100%, -100%) translate3d(0, 0, 0);
+    }
+  }
+  
+  .potta-one-regular {
+    font-family: "Potta One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  
+.tilt-prism-regular {
+    font-family: "Tilt Prism", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "XROT" 0,
+      "YROT" 0;
+  }
+
+  /* From Uiverse.io by vinodjangid07 */ 
+.card-logo {
+    width: fit-content;
+    height: fit-content;
+    background-color: rgb(180, 163, 163);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 25px;
+    gap: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
+  }
+  
+  /* for all social containers*/
+  .socialContainer {
+    width: 52px;
+    height: 52px;
+    background-color: rgb(44, 44, 44);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition-duration: .3s;
+  }
+  /* instagram*/
+  .containerOne:hover {
+    background-color: #d62976;
+    transition-duration: .3s;
+  }
+  /* twitter*/
+  .containerTwo:hover {
+    background-color: #00acee;
+    transition-duration: .3s;
+  }
+  /* linkdin*/
+  .containerThree:hover {
+    background-color: #0072b1;
+    transition-duration: .3s;
+  }
+  /* Whatsapp*/
+  .containerFour:hover {
+    background-color: #128C7E;
+    transition-duration: .3s;
+  }
+  
+  .socialContainer:active {
+    transform: scale(0.9);
+    transition-duration: .3s;
+  }
+  
+  .socialSvg {
+    width: 17px;
+  }
+  
+  .socialSvg path {
+    fill: rgb(255, 255, 255);
+  }
+  
+  .socialContainer:hover .socialSvg {
+    animation: slide-in-top 0.3s both;
+  }
+  
+  @keyframes slide-in-top {
+    0% {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+  
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* From Uiverse.io by Prakhar227 */ 
+.orange {
+    color: #caf438;
+  }
+  
+  .form-container {
+    max-width: 700px;
+    margin: 30px;
+    background-color: #001925;
+    padding: 30px;
+    border-left: 5px solid #caf438;
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% calc(100% - 20px),
+      calc(100% - 20px) 100%,
+      0 100%
+    );
+  }
+  
+  .heading {
+    display: block;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+  }
+  .c1 {
+    display: block;
+    color: #d3f35f;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  .c2 {
+    display: block;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  .form-container .form .input-login {
+    color: #87a4b6;
+    width: 100%;
+    background-color: #002733;
+    border: none;
+    outline: none;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    transition: all 0.2s ease-in-out;
+    border-left: 1px solid transparent;
+  }
+  
+  .form-container .form .input-login:focus {
+    border-left: 5px solid #caf438;
+  }
+  
+  .form-container .form .textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background-color: #013747;
+    color: #caf438;
+    font-weight: bold;
+    resize: none;
+    max-height: 150px;
+    margin-bottom: 20px;
+    border-left: 1px solid transparent;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .form-container .form .textarea:focus {
+    border-left: 5px solid #caf438;
+  }
+  
+  .form-container .form .button-container {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .form-container .form .button-container .send-button {
+    flex-basis: 70%;
+    background: #caf438;
+    padding: 10px;
+    color: #001925;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid transparent;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .form-container .form .button-container .send-button:hover {
+    background: transparent;
+    border: 1px solid #ff7a01;
+    color: #caf438;
+  }
+  
+  .form-container .form .button-container .reset-button-container {
+    filter: drop-shadow(1px 1px 0px #ff7a01);
+    flex-basis: 30%;
+  }
+  
+  .form-container .form .button-container .reset-button-container .reset-button {
+    position: relative;
+    text-align: center;
+    padding: 10px;
+    color: #caf438;
+    font-weight: bold;
+    background: #001925;
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% calc(100% - 10px),
+      calc(100% - 10px) 100%,
+      0 100%
+    );
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .form-container
+    .form
+    .button-container
+    .reset-button-container
+    .reset-button:hover {
+    background: #caf438;
+    color: #001925;
+  }
+
+  /* From Uiverse.io by Spacious74 */ 
+.bgblue {
+    background: linear-gradient(135deg, #fffffff5, #3a4b8a, #ffffff98);
+    padding: 1px;
+    border-radius: 1.2rem;
+    box-shadow: 0px 1rem 1.5rem -0.9rem #000000e1;
+    max-width: 900px;
+  }
+  
+  .card-satelite {
+    font-size: 1rem;
+    color: #bec4cf;
+    background: linear-gradient(135deg, #0d1120 0%, #3a4b8a 43%, #0d1120 100%);
+    padding: 1.5rem;
+    border-radius: 1.2rem;
+  }
+  
